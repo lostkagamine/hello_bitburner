@@ -4,7 +4,9 @@ import haxeburner.Script;
 
 @:keep
 class Hello extends Script {
-	public function run(ns: Bitburner) {
-        ns.alert("hello there");
+    @:jsasync
+    public override function run(ns: Bitburner): Promise<Nothing> {
+        trace("hey there");
+        ns.system.alert("testing");
     }
 }
