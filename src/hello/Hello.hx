@@ -21,8 +21,7 @@ class Hello extends Script implements IJSAsync {
                 target.weaken().jsawait();
             } else if (target.moneyAvailable() < moneyThresh) {
                 trace('Growing $targetName (money ${target.moneyAvailable()})');
-                jsawait(target.grow());
-                trace('after grow');
+                target.grow().jsawait();
             } else {
                 trace('Hacking $targetName');
                 target.hack().jsawait();
